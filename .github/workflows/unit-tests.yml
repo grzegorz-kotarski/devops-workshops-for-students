@@ -20,8 +20,8 @@ jobs:
 
       - name: Setup app
         run: |
-          pip install -e .
+          pip install -e .[dev]
           python setup.py bdist_wheel
 
       - name: Run unit tests
-        run: pytest tests
+        run: python setup.py test
